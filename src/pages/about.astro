@@ -25,6 +25,8 @@ const skills = [
 ];
 
 const [happy, finished, goal] = [true, false, 3];
+
+const skillColor = "navy";
 ---
 
 <html lang="en">
@@ -36,6 +38,18 @@ const [happy, finished, goal] = [true, false, 3];
     <title>{pageTitle}</title>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <style define:vars={{ skillColor }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+
+      .skill {
+        color: var(--skillColor);
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <a href="/">Home</a>
@@ -69,7 +83,7 @@ const [happy, finished, goal] = [true, false, 3];
     <ul aria-describedby="skills">
       {
         skills.map((skill) => {
-          return <li>{skill}</li>;
+          return <li class="skill">{skill}</li>;
         })
       }
     </ul>
