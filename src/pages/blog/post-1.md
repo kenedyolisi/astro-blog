@@ -1,17 +1,14 @@
 ---
+layout: "@layouts/post_layout.astro"
 title: My First Blog Post
-pubDate: 2023-12-01
 description: This is the first of my new Astro blog.
 author: Kenedy Olisi
+pubDate: 2020-01-01
 image:
-  url: https://docs.astro.build/assets/full-logo-light.png
+  url: https://avatars.githubusercontent.com/u/66219869?v=4
   alt: the ull astro logo
 tags: ["astro", "blogging", "learning in public"]
 ---
-
-# My First Blog Post
-
-Published on: 2023-12-01
 
 Welcome to _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
