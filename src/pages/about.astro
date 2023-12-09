@@ -1,5 +1,28 @@
 ---
 const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Kenedy",
+  lastName: "Olisi",
+  country: "Kenya",
+  occupation: "Frontend Developer",
+  hobbies: [
+    "Watching movies",
+    "Listening to music",
+    "Playing checkers",
+    "Gardening",
+    "Cycling",
+  ],
+};
+
+const skills = [
+  "HTML",
+  "CSS (SCSS)",
+  "Bootstrap",
+  "JavaScript (TypeScript)",
+  "React",
+  "Astro",
+];
 ---
 
 <html lang="en">
@@ -18,5 +41,35 @@ const pageTitle = "About Me";
     <a href="/blog/">Blog</a>
 
     <h1>{pageTitle}</h1>
+
+    <p>Here are a few facts about me:</p>
+
+    <p>My name is {identity.firstName} {identity.lastName}.</p>
+    <p>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </p>
+
+    <p>
+      My hobbies include: <ul>
+        {
+          identity.hobbies.map((hobby, index) => {
+            return (
+              <li>
+                {index === identity.hobbies.length - 2 ? hobby + " and" : hobby}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </p>
+
+    <p>My skills are:</p>
+    <ul>
+      {
+        skills.map((skill) => {
+          return <li>{skill}</li>;
+        })
+      }
+    </ul>
   </body>
 </html>
