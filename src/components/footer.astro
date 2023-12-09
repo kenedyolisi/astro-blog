@@ -1,17 +1,13 @@
 ---
-const username = "kenedyolisi";
-const socialPlatforms = ["github", "twitter", "facebook"]
+import Social from "@components/social.astro";
+
+const socialPlatforms = ["github", "twitter", "facebook"];
 ---
 
 <footer>
-  <p>
-    Learn more about my projects on
-  </p>
-  <nav aria-label="social">
-    {
-      socialPlatforms.map((platform)=>{
-        return <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
-      })
-    }
-  </nav>
+  {
+    socialPlatforms.map((platform) => {
+      return <Social platform={platform} />;
+    })
+  }
 </footer>
