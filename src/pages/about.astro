@@ -1,8 +1,7 @@
 ---
 import "@styles/global.scss";
 
-import Footer from "@components/footer.astro";
-import Header from "@components/header.astro";
+import BaseLayout from "@layouts/base_layout.astro";
 
 const pageTitle = "About Me";
 
@@ -30,81 +29,53 @@ const skills = [
 ];
 
 const [happy, finished, goal] = [true, false, 3];
-
-const skillColor = "navy";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+<BaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
 
-    <title>{pageTitle}</title>
+  <p>Here are a few facts about me:</p>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <p>My name is {identity.firstName} {identity.lastName}.</p>
+  <p>
+    I live in {identity.country} and I work as a {identity.occupation}.
+  </p>
 
-    <style define:vars={{ skillColor }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-
-      .skill {
-        color: var(--skillColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-
-    <h1>{pageTitle}</h1>
-
-    <p>Here are a few facts about me:</p>
-
-    <p>My name is {identity.firstName} {identity.lastName}.</p>
-    <p>
-      I live in {identity.country} and I work as a {identity.occupation}.
-    </p>
-
-    <p>
-      My hobbies include: <ul>
-        {
-          identity.hobbies.map((hobby, index) => {
-            return (
-              <li>
-                {index === identity.hobbies.length - 2 ? hobby + " and" : hobby}
-              </li>
-            );
-          })
-        }
-      </ul>
-    </p>
-
-    <p id="skills">My skills are:</p>
-    <ul aria-describedby="skills">
+  <p>
+    My hobbies include: <ul>
       {
-        skills.map((skill) => {
-          return <li class="skill">{skill}</li>;
+        identity.hobbies.map((hobby, index) => {
+          return (
+            <li>
+              {index === identity.hobbies.length - 2 ? hobby + " and" : hobby}
+            </li>
+          );
         })
       }
     </ul>
-    {happy && <p>I am Delighted to be learning Astro.</p>}
+  </p>
 
-    {finished && <p>I have finished this tutorial!</p>}
-
+  <p id="skills">My skills are:</p>
+  <ul aria-describedby="skills">
     {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not three days.</p>
-      )
+      skills.map((skill) => {
+        return <li class="skill">{skill}</li>;
+      })
     }
+  </ul>
+  {happy && <p>I am Delighted to be learning Astro.</p>}
 
-    <Footer />
-    <script>
-      import "@scripts/menu";
-    </script>
-  </body>
-</html>
+  {finished && <p>I have finished this tutorial!</p>}
+
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not three days.</p>
+    )
+  }
+
+  <script>
+    import "@scripts/menu";
+  </script>
+</BaseLayout>
