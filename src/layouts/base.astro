@@ -5,7 +5,7 @@ import Content from "@components/content.astro";
 import Footer from "@components/footer.astro";
 import Header from "@components/header.astro";
 
-const {pageTitle} = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en" dir="ltr">
@@ -20,10 +20,16 @@ const {pageTitle} = Astro.props;
   </head>
   <body>
     <Header />
-    <Content><slot /></Content>
+    <Content>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </Content>
     <Footer />
     <script>
-      import "@scripts/menu"
+      import "@scripts/menu";
+    </script>
+  </body>
+</html>
     </script>
   </body>
 </html>
