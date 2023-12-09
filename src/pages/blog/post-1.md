@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/post_layout.astro"
+layout: "@layouts/post.astro"
 title: My First Blog Post
 description: This is the first of my new Astro blog.
 author: Kenedy Olisi
