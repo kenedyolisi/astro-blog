@@ -4,6 +4,12 @@ import Social from "@components/social.astro";
 const socialPlatforms = ["github", "twitter", "facebook"];
 ---
 
+<style>
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+</style>
+
 <footer>
   {
     socialPlatforms.map((platform) => {
