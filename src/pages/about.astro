@@ -1,5 +1,7 @@
 ---
-import "../styles/global.css";
+import "@styles/global.css";
+
+import Navigation from "@components/navigation.astro";
 
 const pageTitle = "About Me";
 
@@ -54,9 +56,7 @@ const skillColor = "navy";
     </style>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Navigation />
 
     <h1>{pageTitle}</h1>
 

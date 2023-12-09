@@ -1,6 +1,9 @@
 ---
-const pageTitle = "My Astro Site"
+import Navigation from "@components/navigation.astro";
+
+const pageTitle = "My Astro Site";
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,10 +15,8 @@ const pageTitle = "My Astro Site"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    
+    <Navigation />
+
     <h1>{pageTitle}</h1>
   </body>
 </html>
