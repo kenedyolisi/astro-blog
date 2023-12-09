@@ -5,8 +5,7 @@ description: After learning some Astro,  i couldn't stop!
 author: Kenedy Olisi
 pubDate: 2020-01-02
 image:
-  url: https://avatars.githubusercontent.com/u/66219869?v=4https://docs.astro.build/assets/arc.webp
-  alt: thumbnail of Astro arcs
+  url: https://avatars.githubusercontent.com/u/66219869
 tags: [astro, blogging, learning in public, successes]
 ---
 

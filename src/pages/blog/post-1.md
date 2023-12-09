@@ -5,8 +5,7 @@ description: This is the first of my new Astro blog.
 author: Kenedy Olisi
 pubDate: 2020-01-01
 image:
-  url: https://avatars.githubusercontent.com/u/66219869?v=4
-  alt: the ull astro logo
+  url: https://avatars.githubusercontent.com/u/66219869
 tags: ["astro", "blogging", "learning in public"]
 ---
 
