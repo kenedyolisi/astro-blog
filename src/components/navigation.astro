@@ -1,3 +1,17 @@
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/blog">Blog</a>
+---
+const navLinks = ["home", "about", "blog"];
+
+function toTitleCase(str: string) {
+  return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+---
+
+<div class="nav-links">
+  {
+    navLinks.map((link: string) => {
+      return (
+        <a href={`/${link === "home" ? "" : link}`}>{toTitleCase(link)}</a>
+      );
+    })
+  }
+</div>
