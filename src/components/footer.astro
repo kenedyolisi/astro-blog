@@ -1,11 +1,17 @@
 ---
-const platform = "github";
 const username = "kenedyolisi";
+const socialPlatforms = ["github", "twitter", "facebook"]
 ---
 
 <footer>
   <p>
     Learn more about my projects on
-    <a href={`https://www.${platform}.com/${username}`}>{platform}</p>
   </p>
+  <nav aria-label="social">
+    {
+      socialPlatforms.map((platform)=>{
+        return <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+      })
+    }
+  </nav>
 </footer>
