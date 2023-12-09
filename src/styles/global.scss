@@ -19,3 +19,47 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
+
+.nav {
+  &-links {
+    display: none;
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    margin: 0;
+    background-color: #ff9776;
+
+    @media screen and (min-width: 636px) {
+      position: static;
+      display: block;
+      width: auto;
+      margin-left: 5em;
+      background: none;
+
+      & a {
+        display: inline-block;
+        padding: 15px 20px;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 10px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      text-transform: capitalize;
+
+      &:hover,
+      &:focus {
+        background-color: #ff9776;
+      }
+    }
+  }
+}
+
+.expanded {
+  display: unset;
+}
+
