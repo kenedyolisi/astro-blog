@@ -6,15 +6,30 @@
 
 html {
   background-color: #f1f5f9;
-  font-family: sans-serif;
+
+  &.dark {
+    color: #fff;
+    background-color: #0d0950;
+  }
 }
 
 body {
   width: 100%;
   max-width: 80ch;
-  margin: 0 auto;
   padding: 1rem;
+  margin: 0 auto;
+  font-family: sans-serif;
   line-height: 1.5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  main {
+    flex-grow: 1;
+  }
 }
 
 h1 {
@@ -25,14 +40,14 @@ h1 {
 
 .nav {
   &-links {
-    display: none;
-    width: 100%;
     top: 5rem;
     left: 48px;
+    display: none;
+    width: 100%;
     margin: 0;
     background-color: #ff9776;
 
-    @media screen and (min-width: 636px) {
+    @media screen and (min-width >= 636px) {
       position: static;
       display: block;
       width: auto;
@@ -58,6 +73,10 @@ h1 {
       &:focus {
         background-color: #ff9776;
       }
+
+      &.dark {
+        color: #fff;
+      }
     }
   }
 }
@@ -70,14 +89,14 @@ h1 {
   padding-right: 20px;
   cursor: pointer;
 
-  @media screen and (min-width: 636px) {
+  @media screen and (min-width >= 636px) {
     display: none;
   }
 
   .line {
+    display: block;
     width: 40px;
     height: 5px;
-    display: block;
     margin-bottom: 10px;
     background-color: #ff9776;
   }
@@ -86,25 +105,25 @@ h1 {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 .tag {
-  margin: 0.25em;
-  border: solid 1px $primary;
-  border-radius: 0.5em;
   padding: 0.5em 1em;
-  background-color: #f8fcfd;
-  cursor: pointer;
+  margin: 0.25em;
   color: $primary;
   text-underline-offset: 4px;
+  cursor: pointer;
+  background-color: #f8fcfd;
+  border: solid 1px $primary;
+  border-radius: 0.5em;
 
   &:hover {
     color: #f8fcfd;
-    background-color: $primary;
     text-decoration: none;
+    background-color: $primary;
   }
 }
 
