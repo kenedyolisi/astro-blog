@@ -14,5 +14,15 @@ const { frontmatter } = Astro.props;
     alt={frontmatter.author.toLowerCase()}
     width="200"
   />
+  <p><strong>Tags:</strong></p>
+  <nav class="tags" aria-label="tags">
+    {
+      frontmatter.tags.map((tag) => (
+        <a href={`tags/${tag}`} class="tag">
+          {tag}
+        </a>
+      ))
+    }
+  </nav>
   <slot />
 </BaseLayout>
