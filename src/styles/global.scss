@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation */
+@use "sass:map";
 @import "./variables";
 
 * {
@@ -14,12 +16,20 @@ html {
 }
 
 body {
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
   margin: 0 auto;
   font-family: sans-serif;
   line-height: 1.5;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  color: $green;
+  text-transform: capitalize;
+}
+
+a {
+  color: $blue;
 }
 
 .container {
@@ -27,37 +37,65 @@ body {
   flex-direction: column;
   height: 100vh;
 
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px 30px;
+    background-color: #f1f5f9;
+
+    html.dark & {
+      background-color: #0d0950;
+    }
+  }
+
   main {
     flex-grow: 1;
+    margin-inline: 5rem;
   }
 }
 
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-  text-transform: capitalize;
-}
-
 .nav {
-  &-links {
-    top: 5rem;
-    left: 48px;
-    display: none;
-    width: 100%;
-    margin: 0;
-    background-color: #ff9776;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 
-    @media screen and (min-width >= 636px) {
-      position: static;
-      display: block;
-      width: auto;
+  @media screen and (min-width: map.get($breakpoints, md)) {
+    flex-direction: row;
+    justify-content: unset;
+
+    .theme-toggle {
+      order: 3;
+    }
+  }
+
+  .brand {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-decoration: none;
+
+    @media screen and (min-width: map.get($breakpoints, md)) {
+      order: 1;
+    }
+  }
+
+  &-links {
+    display: none;
+    flex-basis: 100%;
+
+    &.expanded {
+      display: unset;
+    }
+
+    @media screen and (min-width: map.get($breakpoints, md)) {
+      display: unset;
+      flex-basis: unset;
+      flex-grow: 1;
+      order: 2;
       margin-left: 5em;
       background: none;
-
-      & a {
-        display: inline-block;
-        padding: 15px 20px;
-      }
     }
 
     a {
@@ -69,9 +107,15 @@ h1 {
       text-decoration: none;
       text-transform: capitalize;
 
+      @media screen and (min-width: map.get($breakpoints, md)) {
+        display: inline-block;
+        padding: 10px 15px;
+      }
+
       &:hover,
       &:focus {
-        background-color: #ff9776;
+        color: #fff;
+        background-color: $blue;
       }
 
       &.dark {
@@ -81,15 +125,12 @@ h1 {
   }
 }
 
-.expanded {
-  display: unset;
-}
-
 .hamburger {
-  padding-right: 20px;
+  // padding-right: 20px;
   cursor: pointer;
+  margin-left: auto;
 
-  @media screen and (min-width >= 636px) {
+  @media screen and (min-width: map.get($breakpoints, md)) {
     display: none;
   }
 
@@ -113,17 +154,17 @@ h1 {
 .tag {
   padding: 0.5em 1em;
   margin: 0.25em;
-  color: $primary;
+  color: $blue;
   text-underline-offset: 4px;
   cursor: pointer;
   background-color: #f8fcfd;
-  border: solid 1px $primary;
+  border: solid 1px $blue;
   border-radius: 0.5em;
 
   &:hover {
     color: #f8fcfd;
     text-decoration: none;
-    background-color: $primary;
+    background-color: $blue;
   }
 }
 
@@ -131,4 +172,16 @@ footer {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+
+  a {
+    --size: 48px;
+
+    width: var(--size);
+    height: var(--size);
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: $blue;
+    border-radius: 50%;
+  }
 }
