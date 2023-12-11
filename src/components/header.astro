@@ -1,12 +1,15 @@
 ---
 import Hamburger from "@components/hamburger.astro";
 import Navigation from "@components/navigation.astro";
+import ThemeIcon from "./theme_icon.astro";
 ---
 
 <header>
   <nav class="nav">
-    <a href="/">Brand</a>
+    <a class="brand" href="/">Brand</a>
+
     <Hamburger />
+    <ThemeIcon />
     <Navigation />
   </nav>
 </header>
