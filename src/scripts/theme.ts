@@ -30,5 +30,5 @@ function handleThemeToggle() {
 }
 
 document
-  .getElementById("theme-toggle")
+  .querySelector(".theme-toggle")
   .addEventListener("click", handleThemeToggle);
