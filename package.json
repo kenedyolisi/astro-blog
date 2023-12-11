@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.1",
-    "astro": "^4.0.3",
-    "stylelint": "^15.10.0"
+    "astro": "^4.0.4",
+    "stylelint": "^16.0.1"
   },
   "devDependencies": {
     "sass": "^1.69.5",
