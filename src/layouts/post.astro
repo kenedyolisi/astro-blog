@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
   <p><strong>Tags:</strong></p>
   <nav class="tags" aria-label="tags">
     {
-      frontmatter.tags.map((tag) => (
+      frontmatter.tags.map((tag: string) => (
         <a href={`tags/${tag}`} class="tag">
           {tag}
         </a>
