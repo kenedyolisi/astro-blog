@@ -1,5 +1,4 @@
 ---
-layout: "@layouts/post.astro"
 title: My Second Blog Post
 description: After learning some Astro,  i couldn't stop!
 author: Kenedy Olisi

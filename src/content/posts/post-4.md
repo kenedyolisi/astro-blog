@@ -1,6 +1,6 @@
 ---
-layout: "@layouts/post.astro"
 title: My Fourth Blog Post
+description: ""
 author: "Kenedy Olisi"
 pubDate: 2020-01-04
 image:
