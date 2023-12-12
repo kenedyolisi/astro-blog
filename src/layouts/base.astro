@@ -25,7 +25,7 @@ const { pageTitle } = Astro.props;
     <div class="container">
       <Header />
       <Content>
-        <h1>{pageTitle}</h1>
+        <h1 transition:animate="slide">{pageTitle}</h1>
         <slot />
       </Content>
       <Footer />
