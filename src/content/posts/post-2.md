@@ -1,6 +1,6 @@
 ---
 title: My Second Blog Post
-description: After learning some Astro,  i couldn't stop!
+description: After learning some Astro, I couldn't stop!
 author: Kenedy Olisi
 pubDate: 2020-01-02
 image:
